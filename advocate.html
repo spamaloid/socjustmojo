@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Advocating opportunities</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="advocate.css">
+  <script src="jquery-3.5.1.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="extyRadio.js"></script>
+
+</head>
+<body>
+
+<script>
+  function func1() {
+    var results3='<a href="results3.html">Advocate for food security</a>'
+    var results6='<a href="results6.html"> Advocate for environmental justice</a>'
+    var results9='<a href="results9.html"> Advocate for civil rights</a>'
+    var results12='<a href="results12.html"> Advocate for socioeconomic equity</a>'
+    var top=document.getElementsByName("tipe")
+      for (i=0; i<top.length; i++) {
+        if (top[i].checked)
+          var toppy = top[i].value;
+        }
+    if (toppy=="Environmental") {
+      document.getElementById("donResults").innerHTML=results6;
+    } else if (toppy=="Civil") {
+      document.getElementById("donResults").innerHTML=results9;
+    } else if (toppy=="Food") {
+      document.getElementById("donResults").innerHTML=results3;
+    } else if (toppy=="Socioeconomic") {
+      document.getElementById("donResults").innerHTML=results12;
+    } else {
+      document.getElementById("donResults").innerHTML="No results found.";
+    }
+}
+</script>
+
+<nav class="navbar navbar-expand-md">
+    <a href="index.html" class="navbar-brand">sjMojo</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About us</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learn more:</a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="envjustmain.html" class="dropdown-item">Environmental justice</a>
+                    <a href="civilrightsmain.html" class="dropdown-item">Civil rights</a>
+		    <a href="foodsecuritymain.html" class="dropdown-item">Food security</a>
+		    <a href="socioeconomicmain.html" class="dropdown-item">Socioeconomic equity</a>
+                    <div class="dropdown-divider"></div>
+		    <a href="donate.html" class="dropdown-item">Donating</a>
+		    <a href="advocate.html" class="dropdown-item">Advocating</a>
+                    <a href="volunteer.html"class="dropdown-item">Volunteering</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+  <header class="page-header header container-fluid">
+  <div class="overlay"></div>
+  <div class="description">
+  <h3>Advocating</h3><br>
+    <p>You can provide your energy and passion to contact legislators and encourage them to make decisions that help your community.</p>
+    <p>Check off the type of organization you want to help, and find organizations 
+       that you can contact. </p>
+    <br>
+
+    <div>
+    <form>
+      <p><strong>Advocate for organizations for:</strong></p>
+
+        <input type="radio" id="env" name="tipe" value="Environmental">
+        <label for="env">Environmental justice</label><br>
+
+        <input type="radio" id="civ" name="tipe" value="Civil">
+        <label for="civ">Civil rights</label><br>
+
+        <input type="radio" id="food" name="tipe" value="Food">
+        <label for="food">Food security</label><br>
+
+        <input type="radio" id="soc" name="tipe" value="Socioeconomic">
+        <label for="soc">Socioeconomic equity</label><br>
+    </form>
+
+    </div><br>
+
+    <div id="doIt">
+      <button type="button" name="findOrgs" id="findOrgs" onclick="func1()">Find organizations
+</button><br>
+      &nbsp;
+      <p id="donResults"> </p> 
+    </div>
+  </div>
+
+  <br>
+
+  </header>
+
+  <div class="container features">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+	<h3 class="feature-title">Find your organizations</h3>
+        
+	<form id="pickForm">
+        <div>
+	  <h4 class="feature-titlesm">Find an organization:</h4>
+            <div>
+                <input type="radio" name="soctype" value="Environmental"> Environment <br>
+                <input type="radio" name="soctype" value="Civil"> Civil rights <br>
+                <input type="radio" name="soctype" value="Food"> Food security <br>
+                <input type="radio" name="soctype" value="Socio"> Socioeconomic <br>
+		<br>
+            </div>
+	  <h4 class="feature-titlesm">Choose your action:</h4>
+            <div>
+                <input type="radio" name="actType" value="Donate"> Donate <br>
+                <input type="radio" name="actType" value="Volunteer">  Volunteer <br>
+                <input type="radio" name="actType" value="Advocate"> Advocate <br>
+            </div>
+        </div>
+    </form>
+    
+    <div id="package">
+      <div>
+	<br>
+        <label>Organization:</label>
+        <span id="soctype"></span>
+      </div>
+      <div>
+        <label>Action:</label>
+        <span id="actType"></span>
+      </div>
+      <div>
+        <p id="demo"></p>
+      </div>
+      <div>
+	<em>You chose:</em>
+	<p id="ifResults5"> </p>
+      </div>
+    </div>
+  </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <h3 class="feature-title">Have questions?</h3>
+        <img src="images/help1.jpg" class="img-fluid">
+        <p>Our friendly staffers are happy to provide information and recommendations for ways to get involved. Contact us at 518-555-1212 or email us at info@sjmojo.org. </p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+      <h3 class="feature-title">List your organization!</h3>
+      <p>We'll review your submission to see if your organization is appropriate.</p>
+      <div class-"form-group">
+        <input type="text" class="form-control" placeholder="Name" name="">
+      </div>
+      <div class-"form-group">
+        <input type="text" class="form-control" placeholder="Website" name="">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email address" name="email">
+      </div>
+      <p>Briefly describe your organization:</p>
+      <div class="form-group">
+        <textarea class="form-control" rows="4"></textarea>
+      </div>
+      <input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+      </div>
+    </div>
+  </div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12">
+      <h6 class="text-uppercase font-weight-bold">Additional information</h6>
+      <p>sjmojo.org is a strictly not-for-profit organization staffed by volunteers and providing publicly available information. We do not take responsibility for the content of any outside organization. If you are considering working with an organization, please conduct due diligence to ensure that the organization provides the services that you seek. 
+      </p>
+      <p> 
+      </p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <p>432 Western Avenue
+	<br/>Albany, New York
+        <br/>info@sjmojo.org
+        <br/>518-555-1212
+      </div>
+    </div>
+  <div class="footer-copyright text-center">c2020 Copyright: sjmojo.org</div>
+</footer>
+      
+
+  <script src="main.js"></script>
+</body>
+</html>
